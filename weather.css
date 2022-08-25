@@ -1,7 +1,7 @@
 body {
   font-family: "Inter", sans-serif;
   text-align: center;
-  background-image: url("cloudy.jpg");
+  background-image: url("images/cloudy.jpg");
   background-size: cover;
 }
 input {
