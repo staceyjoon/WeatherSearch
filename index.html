@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="weather.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/bb8aaaaa42.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="col-4">
+        <div class="input-group mb-3">
+          <form id="form">
+            <input
+              type="text"
+              id="form-input"
+              placeholder="Enter the city"
+              aria-label="Enter the city"
+              aria-describedby="button-addon2"
+            /><button id="search">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          
+        </div>
+      </div>
+    </div>
+    <button id="location"><i class="fa-solid fa-location-dot"></i></button>
+    <h1 id="city"></h1>
+    <p id="date">Thursday, July 14</p>
+    <p id="time">18:00</p>
+
+    <img src="light-rain.png" class="mainPicture" alt="Rain Icon" />
+    <div class="float-none">
+      <span id="temperature">26</span>
+      <span
+        ><a href="#" id="celsius">°C</a>|<a href="#" id="fahrenheit"
+          >°F</a
+        ></span
+      >
+    </div>
+    <p id="condition">Partly cloudy</p>
+    <ul>
+      <li>Precipitation: 10%</li>
+      <li>Humidity: 50%</li>
+      <li>Wind: 24 km/h</li>
+    </ul>
+    <div class="weatherBox">
+      <p id="day">Fri</p>
+      <img src="greyclouds.png" alt="picture" />
+      <p id="textTemp">25°C</p>
+    </div>
+    <div class="weatherBox">
+      <p id="day">Sat</p>
+      <img src="shower.png" alt="picture" />
+      <p id="textTemp">19°C</p>
+    </div>
+    <div class="weatherBox">
+      <p id="day">Sun</p>
+      <img src="sunny.png" alt="picture" />
+      <p id="textTemp">18°C</p>
+    </div>
+    <div class="weatherBox">
+      <p class="day">Mon</p>
+      <img src="wind.png" alt="picture" />
+      <p class="textTemp">17°C</p>
+    </div>
+    <div class="weatherBox">
+      <p class="day">Tue</p>
+      <img src="scattered-thunderstorms.png" alt="picture" />
+      <p class="textTemp">21°C</p>
+    </div>
+    <a
+      href="https://www.flaticon.com/free-icons/hail"
+      title="hail icons"
+      id="credits"
+      >Hail icons created by justicon - Flaticon</a
+    >
+    <script src="index.js"></script>
+  </body>
+</html>
