@@ -80,6 +80,12 @@ function showTemperature(response) {
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
+  let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
+  let condition = response.data.weather[0].main;
+  document.querySelector("#condition").innerHTML = condition;
+  document.querySelector("#humidity").innerHTML = humidity;
+  document.querySelector("#wind").innerHTML = wind;
 }
 
 //Change Temperature Value
@@ -108,6 +114,12 @@ function showWeather(response) {
   temp.innerHTML = `${temperature}`;
   h1.innerHTML = `${response.data.name}`;
   title.innerHTML = `${response.data.name}`;
+  let humidity = response.data.main.humidity;
+  let wind = Math.round(response.data.wind.speed);
+  let condition = response.data.weather[0].main;
+  document.querySelector("#condition").innerHTML = condition;
+  document.querySelector("#humidity").innerHTML = humidity;
+  document.querySelector("#wind").innerHTML = wind;
 }
 function setLocation(position) {
   let apiKey = "c3e45eacea733c0910bacd0ec5f8c375";

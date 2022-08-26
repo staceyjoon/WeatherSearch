@@ -88,6 +88,7 @@ ul {
   color: grey;
   font-family: "Inter", sans-serif;
 }
+
 .weatherBox {
   display: inline-block;
   background-color: rgb(240, 236, 226, 0.5);
