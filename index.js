@@ -62,6 +62,8 @@ function search(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#form-input");
   searchCity(cityInput.value);
+  let title = document.querySelector("title");
+  title.innerHTML = cityInput.value;
 }
 
 let searchForm = document.querySelector("#form");
@@ -85,7 +87,6 @@ function showTemperature(response) {
 function convertFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-
   temperatureElement.innerHTML = 78.8;
 }
 let fahrenheit = document.querySelector("#fahrenheit");
@@ -103,8 +104,10 @@ function showWeather(response) {
   let temp = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
   let h1 = document.querySelector("#city");
+  let title = document.querySelector("title");
   temp.innerHTML = `${temperature}`;
   h1.innerHTML = `${response.data.name}`;
+  title.innerHTML = `${response.data.name}`;
 }
 function setLocation(position) {
   let apiKey = "c3e45eacea733c0910bacd0ec5f8c375";
