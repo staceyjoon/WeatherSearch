@@ -1,5 +1,3 @@
-//Changing date
-
 function changeDate(date) {
   let days = [
     "Sunday",
@@ -39,8 +37,6 @@ let displayDate = document.querySelector("p#date");
 let currentDate = new Date();
 displayDate.innerHTML = changeDate(currentDate);
 
-//Changing time
-
 function formatTime(date) {
   let hours = date.getHours();
   if (hours < 10) {
@@ -55,8 +51,6 @@ function formatTime(date) {
 let displayTime = document.querySelector("p#time");
 let currentTime = new Date();
 displayTime.innerHTML = formatTime(currentTime);
-
-//Changing City with Search Value
 
 function search(event) {
   event.preventDefault();
@@ -88,8 +82,6 @@ function showTemperature(response) {
   document.querySelector("#wind").innerHTML = wind;
 }
 
-//Change Temperature Value
-
 function convertFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -105,7 +97,6 @@ function convertCelsius(event) {
   temperatureElement.innerHTML = 26;
 }
 
-//Click Button - get your location
 function showWeather(response) {
   let temp = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
