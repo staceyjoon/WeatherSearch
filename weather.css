@@ -3,6 +3,7 @@ body {
   text-align: center;
   background-image: url("images/cloudy.jpg");
   background-size: cover;
+  background-position: center;
 }
 input {
   font-family: "Inter", sans-serif;
