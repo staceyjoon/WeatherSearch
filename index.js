@@ -80,7 +80,6 @@ fahrenheit.addEventListener("click", convertFahrenheit);
 let celsius = document.querySelector("#celsius");
 celsius.addEventListener("click", convertCelsius);
 
-
 function convertCelsius(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
@@ -97,15 +96,21 @@ function showWeather(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
-  
+  let iconElement = document.querySelector("#mainPicture");
+
   temp.innerHTML = `${temperature}`;
   h1.innerHTML = `${response.data.name}`;
   title.innerHTML = `${response.data.name}`;
-
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
   document.querySelector("#condition").innerHTML = condition;
   document.querySelector("#humidity").innerHTML = humidity;
   document.querySelector("#wind").innerHTML = wind;
-  document.querySelector("#mainPicture").setAttribute("alt", response.data.weather[0].main);
+  document
+    .querySelector("#mainPicture")
+    .setAttribute("alt", response.data.weather[0].main);
   celsiusTemperature = Math.round(response.data.main.temp);
 }
 function setLocation(position) {
