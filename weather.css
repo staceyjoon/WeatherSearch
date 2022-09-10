@@ -125,8 +125,10 @@ footer{
 }
 a {
   text-decoration: none;
+  cursor: default;
 }
 a:link,
 a:visited {
-  color: grey;
+  color: black;
+  cursor: default;
 }
