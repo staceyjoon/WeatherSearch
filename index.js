@@ -77,10 +77,10 @@ function showTemperature(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
-  let iconElement =
   document.querySelector("#condition").innerHTML = condition;
   document.querySelector("#humidity").innerHTML = humidity;
   document.querySelector("#wind").innerHTML = wind;
+  document.querySelector("#mainPicture").setAttribute("src", `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function convertFahrenheit(event) {
