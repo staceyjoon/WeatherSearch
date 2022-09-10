@@ -58,6 +58,7 @@ function search(event) {
   searchCity(cityInput.value);
   let title = document.querySelector("title");
   title.innerHTML = cityInput.value;
+  cityInput.value = '';
 }
 
 let searchForm = document.querySelector("#form");
@@ -97,7 +98,6 @@ function showWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
   let iconElement = document.querySelector("#mainPicture");
-
   temp.innerHTML = `${temperature}`;
   h1.innerHTML = `${response.data.name}`;
   title.innerHTML = `${response.data.name}`;
