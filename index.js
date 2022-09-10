@@ -77,6 +77,8 @@ function showTemperature(response) {
   let humidity = response.data.main.humidity;
   let wind = Math.round(response.data.wind.speed);
   let condition = response.data.weather[0].main;
+  let title = document.querySelector("title");
+  title.innerHTML = `${response.data.name}`;
   document.querySelector("#condition").innerHTML = condition;
   document.querySelector("#humidity").innerHTML = humidity;
   document.querySelector("#wind").innerHTML = wind;
@@ -118,7 +120,7 @@ function setLocation(position) {
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
-  axios.get(url).then(showWeather);
+  axios.get(url).then(showTemperature);
 }
 navigator.geolocation.getCurrentPosition(setLocation);
 let locationButton = document.querySelector("#location");

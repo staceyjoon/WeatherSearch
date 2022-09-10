@@ -71,7 +71,6 @@ h4 {
   font-size: 12px;
 }
 #mainPicture {
-  
   height: 100px;
 }
 .temperature {
@@ -92,27 +91,25 @@ ul {
 
 .weatherBox {
   display: inline-block;
-  background-color: rgb(240, 236, 226, 0.5);
+  background-color: rgba(214, 234, 245, 0.466);
   border: solid 1px;
-  border-radius: 50px;
-  border-color: grey;
-  padding: 13px 30px;
-  margin: 35px 4px;
-  height: 100px;
-  width: 20px;
+  border-radius: 40px;
+  border-color: rgb(17, 68, 92);
+  padding-top: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 25px;
+  margin: 35px 5px;
+  height: 130px;
+  width: 50px;
   font-family: "Inter", sans-serif;
-  font-size: 12px;
-  font-weight: 400;
-}
-.day {
+  font-weight: 500;
   text-align: center;
 }
 #icon {
-  height: 30%;
+  height: 40%;
 }
-.textTemp {
-  text-align: center;
-}
+
 #credits {
   display: inline;
   font-size: 12px;
