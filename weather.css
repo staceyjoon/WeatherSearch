@@ -9,7 +9,7 @@ input {
   font-family: "Inter", sans-serif;
   width: 25%;
   height: 20px;
-  border: solid 2px lightgrey;
+  border: solid 1px rgba(214, 234, 245, 0.466);
   border-radius: 10px;
   padding: 6px;
   background-color: rgb(255, 255, 255, 0.3);
