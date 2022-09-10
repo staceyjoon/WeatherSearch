@@ -70,8 +70,8 @@ h4 {
   line-height: 2px;
   font-size: 12px;
 }
-.mainPicture {
-  padding-top: 15px;
+#mainPicture {
+  
   height: 100px;
 }
 .temperature {
