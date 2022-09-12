@@ -120,6 +120,10 @@ function setLocation(position) {
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
   axios.get(url).then(showWeather);
 }
-navigator.geolocation.getCurrentPosition(setLocation);
+
+function getPosition(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(setLocation);
+}
 let locationButton = document.querySelector("#location");
-locationButton.addEventListener("click", setLocation);
+locationButton.addEventListener("click", getPosition);
