@@ -58,7 +58,7 @@ function search(event) {
   searchCity(cityInput.value);
   let title = document.querySelector("title");
   title.innerHTML = cityInput.value;
-  cityInput.value = '';
+  cityInput.value = "";
 }
 
 let searchForm = document.querySelector("#form");
@@ -114,7 +114,7 @@ function showWeather(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
 }
 function setLocation(position) {
-  let apiKey = "c3e45eacea733c0910bacd0ec5f8c375";
+  let apiKey = "e450bc345a80a08ada69fd5c714d871d";
   let lat = position.coords.latitude;
   let lon = position.coords.longitude;
   let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${apiKey}`;
@@ -127,3 +127,46 @@ function getPosition(event) {
 }
 let locationButton = document.querySelector("#location");
 locationButton.addEventListener("click", getPosition);
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
+
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="weatherBox">`;
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="weatherBox" id="forecast">
+        <p id="day">${formatDay(forecastDay.dt)}</p>
+        <img
+        src="http://openweathermap.org/img/wn/${
+          forecastDay.weather[0].icon
+        }@2x.png"
+        alt=""
+        width="42" id="icon"/>
+        <p id="textTemp">${Math.round(
+            forecastDay.temp.max
+          )}°C</p>
+      </div>`;
+    }
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "e450bc345a80a08ada69fd5c714d871d";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(displayForecast);
+}
