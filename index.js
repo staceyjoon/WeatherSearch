@@ -142,21 +142,22 @@ function displayForecast(response) {
 
   let forecastElement = document.querySelector("#forecast");
 
-  let forecastHTML = `<div class="weatherBox">`;
+  let forecastHTML = `<div class="boxes">`;
   forecast.forEach(function (forecastDay, index) {
     if (index < 5) {
       forecastHTML =
         forecastHTML +
         `<div class="weatherBox" id="forecast">
+        
         <p id="day">${formatDay(forecastDay.dt)}</p>
         <img
         src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png"
        id="icon"/>
+       
         <p id="textTemp">${Math.round(forecastDay.temp.max)}°C</p>
       </div>`;
-    
     }
   });
 
