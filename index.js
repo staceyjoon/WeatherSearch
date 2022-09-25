@@ -102,7 +102,8 @@ function showWeather(response) {
   h1.innerHTML = response.data.name;
   title.innerHTML = response.data.name;
   iconElement.setAttribute(
-    "src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   document.querySelector("#condition").innerHTML = condition;
   document.querySelector("#humidity").innerHTML = humidity;
@@ -111,7 +112,7 @@ function showWeather(response) {
     .querySelector("#mainPicture")
     .setAttribute("alt", response.data.weather[0].main);
   celsiusTemperature = Math.round(response.data.main.temp);
-  getForecast(response.data.coord)
+  getForecast(response.data.coord);
 }
 function setLocation(position) {
   let apiKey = "e450bc345a80a08ada69fd5c714d871d";
@@ -152,12 +153,10 @@ function displayForecast(response) {
         src="http://openweathermap.org/img/wn/${
           forecastDay.weather[0].icon
         }@2x.png"
-        alt=""
-        width="42" id="icon"/>
-        <p id="textTemp">${Math.round(
-            forecastDay.temp.max
-          )}°C</p>
+       id="icon"/>
+        <p id="textTemp">${Math.round(forecastDay.temp.max)}°C</p>
       </div>`;
+    
     }
   });
 
