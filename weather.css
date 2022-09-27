@@ -60,6 +60,10 @@ input {
   display: inline-block;
   margin: 10px auto;
 }
+.big{
+  display: block;
+  margin: 0 auto;
+}
 h1,
 p,
 h4 {
