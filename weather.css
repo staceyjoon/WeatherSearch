@@ -38,7 +38,7 @@ input {
   text-decoration: none;
   transition: background-color 0.2s, background-position 0.2s;
 }
-#location{
+#location {
   background-image: linear-gradient(1deg, #83eaf1, #63a4ff 99%);
   font-family: "Inter", sans-serif;
   background-color: #3eb2fd;
@@ -60,7 +60,7 @@ input {
   display: inline-block;
   margin: 10px auto;
 }
-.big{
+.big {
   display: block;
   margin: 0 auto;
 }
@@ -93,27 +93,26 @@ ul {
   list-style: none;
   padding-right: 30px;
   font-size: 15px;
-  color: #053C5E;
+  color: #053c5e;
   font-family: "Inter", sans-serif;
   font-weight: 600;
 }
-.boxes{
-  display: block;
+.boxes {
+  display: flex;
+  justify-content: center;
   margin: 0 auto;
   padding-right: 15px;
   padding-bottom: 20px;
   border: none;
-  
 }
 .weatherBox {
-  
   display: inline-block;
   font-family: "Inter", sans-serif;
   font-weight: 600;
   text-align: center;
   margin: 0 auto;
 }
-#icon{
+#icon {
   height: 30%;
 }
 #credits {
@@ -121,13 +120,12 @@ ul {
   font-size: 12px;
   color: black;
 }
-footer{
+footer {
   display: block;
   margin: 0 auto;
   position: fixed;
   left: 0;
   bottom: 0;
- 
 }
 a {
   text-decoration: none;
